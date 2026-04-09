@@ -42,10 +42,23 @@
 (setq history-length 300)
 (setq savehist-additional-variables '(buffer-name-history))
 
-(ido-mode 1)
-(ido-everywhere 1)
-(setq ido-enable-flex-matching t)
-(setq ido-use-virtual-buffers t)
+(use-package vertico
+  :init (vertico-mode 1))
+
+(use-package orderless
+  :custom
+  (completion-styles '(orderless basic))
+  (completion-category-overrides '((file (styles basic partial-completion)))))
+
+(use-package marginalia
+  :init (marginalia-mode 1))
+
+(use-package consult
+  :bind
+  ("C-x b"   . consult-buffer)
+  ("C-s"     . consult-line)
+  ("M-y"     . consult-yank-pop)
+  ("C-c r"   . consult-ripgrep))
 
 (setq font-lock-maximum-decoration t)
 (mapc (lambda (face)
