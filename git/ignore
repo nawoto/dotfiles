@@ -1,1 +1,13 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# エディタ
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Claude Code
 **/.claude/settings.local.json
