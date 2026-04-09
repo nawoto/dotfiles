@@ -16,7 +16,9 @@
 ## 新マシンでのセットアップ
 
 ```sh
-# 前提: fish, fisher, ghq, stow がインストール済み
+# 依存ツールのインストール
+brew install fish ghq stow
+curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
 
 ghq get nawoto/dotfiles
 cd ~/ghq/github.com/nawoto/dotfiles
