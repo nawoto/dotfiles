@@ -17,8 +17,7 @@
 
 ```sh
 # 依存ツールのインストール
-brew install fish ghq stow
-curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+brew install fish fisher ghq stow
 
 ghq get nawoto/dotfiles
 cd ~/ghq/github.com/nawoto/dotfiles
