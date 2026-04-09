@@ -116,6 +116,7 @@
 (global-set-key (kbd "C-h") 'delete-backward-char) ; ヘルプは F1
 (global-set-key (kbd "C-z") #'undo)
 (global-set-key (kbd "C-x C-b") 'buffer-menu)
+(global-set-key (kbd "C-x O") (lambda () (interactive) (other-window -1)))
 
 ;; 言語・エンコーディング
 (prefer-coding-system 'utf-8)
