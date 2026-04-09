@@ -1,0 +1,19 @@
+tap "railwaycat/emacsmacport"
+
+brew "bat"
+brew "eza"
+brew "fish"
+brew "fisher"
+brew "fzf"
+brew "gh"
+brew "ghq"
+brew "ripgrep"
+brew "starship"
+brew "volta"
+brew "railwaycat/emacsmacport/emacs-mac@29", args: ["with-modern-icon"]
+
+cask "claude-code"
+cask "ghostty"
+cask "keepassxc"
+cask "obsidian"
+cask "raycast"
