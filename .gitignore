@@ -1,0 +1,19 @@
+# 自動生成・ツール固有
+configstore/
+gatsby/
+karabiner/
+wezterm/
+raycast/
+
+# gh CLI の認証情報
+gh/hosts.yml
+
+# fish: Fisher・fish が自動生成するファイル群
+fish/fish_variables
+fish/conf.d/
+fish/functions/
+fish/completions/
+fish/themes/
+
+# macOS
+.DS_Store
