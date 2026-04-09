@@ -21,7 +21,12 @@ brew install fish fisher ghq stow
 
 ghq get nawoto/dotfiles
 cd ~/ghq/github.com/nawoto/dotfiles
+
+# dotfiles を ~/.config に symlink
 stow .
+
+# Homebrew パッケージ・アプリを一括インストール
+brew bundle
 
 # fish プラグインを再インストール
 fisher update
