@@ -10,6 +10,7 @@ brew "ghq"
 brew "ripgrep"
 brew "starship"
 brew "volta"
+brew "webp"
 brew "railwaycat/emacsmacport/emacs-mac@29", args: ["with-modern-icon"]
 
 cask "claude-code"

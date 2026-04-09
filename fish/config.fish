@@ -6,7 +6,6 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-set -x GOPATH $HOME/Development/
 set -x FZF_DEFAULT_COMMAND 'rg --files --hidden --follow --glob "!.git/*"'
 set -x FZF_LEGACY_KEYBINDINGS 1
 set -x FZF_FIND_FILE_COMMAND $FZF_DEFAULT_COMMAND
