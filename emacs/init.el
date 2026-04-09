@@ -1,18 +1,4 @@
 ;;; init.el --- Emacs 初期設定
-;;; 以下の項目を必要に応じて編集してください
-
-;; =============================================================================
-;; 指定できる主な設定項目（この下で値を変更）
-;; =============================================================================
-;; 1. テーマ: dark / light / その他 (e.g. modus-vivendi, modus-operandi, doom-one)
-;; 2. フォント: フォント名とサイズ
-;; 3. 行番号: 絶対 / 相対 / 非表示
-;; 4. タブ: スペース数、タブをスペースに変換するか
-;; 5. バックアップ: 自動作成するか、保存先
-;; 6. 自動保存: 有効/無効、間隔
-;; 7. 表示: ツールバー・スクロールバー・行折り返しなど
-;; 8. キーバインド: 好みのキー割り当て
-;; =============================================================================
 
 ;; -----------------------------------------------------------------------------
 ;; パッケージ管理（初回は M-x package-refresh-contents を実行）
@@ -41,14 +27,14 @@
 
 ;; 行番号（absolute=絶対, relative=相対, nil=非表示）
 (setq display-line-numbers-type 'relative)
+(global-display-line-numbers-mode 1)
 
 ;; タブ・インデント
 (setq tab-width 4)
-(setq indent-tabs-mode nil)        ; タブの代わりにスペース
-(setq-default indent-tabs-mode nil)
+(setq-default indent-tabs-mode nil) ; タブの代わりにスペース
 
 ;; バックアップファイル
-(setq backup-instead-of-copying t)
+(setq backup-by-copying t)
 (setq make-backup-files t)
 (setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
 
@@ -141,12 +127,6 @@
 ;; 外部テーマを使う場合は package-install でインストール後に load-theme
 (load-theme 'modus-vivendi t)   ; 暗いテーマ
 ;; (load-theme 'modus-operandi t) ; 明るいテーマ
-
-;; テーマのあとでコメント・文字列をはっきり色づけ（白いままにならないように）
-(set-face-attribute 'font-lock-comment-face nil
-                    :foreground "#7aa2a8" :slant 'italic)
-(set-face-attribute 'font-lock-string-face nil
-                    :foreground "#9ece6a")
 
 ;; カーソル行をハイライト（オプション）
 (global-hl-line-mode 1)
