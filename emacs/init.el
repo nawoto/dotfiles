@@ -15,6 +15,13 @@
   (package-install 'use-package))
 (require 'use-package)
 (setq use-package-always-ensure t)
+(setq use-package-ensure-function
+      (lambda (name args state)
+        (condition-case nil
+            (use-package-ensure-elpa name args state)
+          (error
+           (package-refresh-contents)
+           (use-package-ensure-elpa name args state)))))
 
 ;; 基本設定
 (setq inhibit-startup-message t)
