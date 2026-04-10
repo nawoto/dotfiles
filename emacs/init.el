@@ -61,7 +61,14 @@
   ("C-x b"   . consult-buffer)
   ("C-s"     . consult-line)
   ("M-y"     . consult-yank-pop)
-  ("C-c r"   . consult-ripgrep))
+  ("C-c r"   . consult-ripgrep)
+  ("C-x p b" . consult-project-buffer))
+
+(use-package which-key
+  :config (which-key-mode 1))
+
+(use-package magit
+  :bind ("C-c g" . magit-status))
 
 (setq font-lock-maximum-decoration t)
 (mapc (lambda (face)
@@ -75,10 +82,17 @@
 
 ;; パッケージ設定
 (use-package markdown-mode
-  :hook (markdown-mode . (lambda ()
-                           (font-lock-add-keywords
-                            nil
-                            '(("<!--\\(.\\|\n\\)*?-->" 0 'font-lock-comment-face t))))))
+  :hook
+  (markdown-mode . visual-line-mode)
+  (markdown-mode . olivetti-mode)
+  (markdown-mode . flyspell-mode)
+  (markdown-mode . (lambda ()
+                     (font-lock-add-keywords
+                      nil
+                      '(("<!--\\(.\\|\n\\)*?-->" 0 'font-lock-comment-face t))))))
+
+(use-package olivetti
+  :custom (olivetti-body-width 80))
 
 (use-package dashboard
   :config
