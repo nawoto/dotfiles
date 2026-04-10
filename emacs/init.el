@@ -19,7 +19,12 @@
 ;; 基本設定
 (setq inhibit-startup-message t)
 (setq initial-scratch-message nil)
-(setq ring-bell-function 'ignore)
+(setq ring-bell-function
+      (lambda ()
+        (let ((orig-fg (face-foreground 'mode-line)))
+          (set-face-foreground 'mode-line "red")
+          (run-with-timer 0.1 nil
+                          (lambda () (set-face-foreground 'mode-line orig-fg))))))
 
 (setq display-line-numbers-type 'relative)
 (global-display-line-numbers-mode 1)
