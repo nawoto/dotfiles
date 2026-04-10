@@ -145,6 +145,7 @@
 (global-set-key (kbd "C-x O") (lambda () (interactive) (other-window -1)))
 
 ;; 言語・エンコーディング
+(setenv "LANG" "en_US.UTF-8")
 (prefer-coding-system 'utf-8)
 (set-language-environment "Japanese")
 (set-default-coding-systems 'utf-8-unix)
