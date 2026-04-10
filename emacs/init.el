@@ -12,7 +12,6 @@
   (package-refresh-contents))
 
 (unless (package-installed-p 'use-package)
-  (package-refresh-contents)
   (package-install 'use-package))
 (require 'use-package)
 (setq use-package-always-ensure t)
@@ -37,6 +36,7 @@
 
 (setq-default truncate-lines t)
 (show-paren-mode 1)
+(setq show-paren-delay 0)
 (delete-selection-mode 1)
 (recentf-mode 1)
 (setq recentf-max-saved-items 200)
@@ -115,7 +115,6 @@
 ;; キーバインド
 (global-set-key (kbd "C-h") 'delete-backward-char) ; ヘルプは F1
 (global-set-key (kbd "C-z") #'undo)
-(global-set-key (kbd "C-x C-b") 'buffer-menu)
 (global-set-key (kbd "C-x O") (lambda () (interactive) (other-window -1)))
 
 ;; 言語・エンコーディング
