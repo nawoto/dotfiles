@@ -19,6 +19,7 @@
 ;; 基本設定
 (setq inhibit-startup-message t)
 (setq initial-scratch-message nil)
+(setq ring-bell-function 'ignore)
 
 (setq display-line-numbers-type 'relative)
 (global-display-line-numbers-mode 1)
