@@ -110,7 +110,7 @@
   (dashboard-setup-startup-hook)
   (setq dashboard-startup-banner
         (expand-file-name "banner.txt" (expand-file-name ".config/emacs" "~")))
-  (setq dashboard-banner-logo-title "✨ ようこそ Emacs へ ✨")
+  (setq dashboard-banner-logo-title "Happy Hacking")
   (setq dashboard-center-content t)
   (setq dashboard-show-shortcuts t)
   (setq dashboard-items '((recents  . 8)
@@ -118,7 +118,7 @@
                           (projects . 5)))
   (setq dashboard-footer-messages '("Let the hacking begin!"
                                     "Happy coding!"
-                                    "編集を楽しもう！"))
+                                    "Edit with joy!"))
   (setq dashboard-set-footer t))
 
 (use-package eat
