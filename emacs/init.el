@@ -11,8 +11,6 @@
 (unless package-archive-contents
   (package-refresh-contents))
 
-(unless (package-installed-p 'use-package)
-  (package-install 'use-package))
 (require 'use-package)
 (setq use-package-always-ensure t)
 (setq use-package-ensure-function
@@ -115,7 +113,6 @@
   (setq dashboard-banner-logo-title "✨ ようこそ Emacs へ ✨")
   (setq dashboard-center-content t)
   (setq dashboard-show-shortcuts t)
-  (setq dashboard-set-navigator t)
   (setq dashboard-items '((recents  . 8)
                           (bookmarks . 5)
                           (projects . 5)))
@@ -145,7 +142,6 @@
 (global-set-key (kbd "C-x O") (lambda () (interactive) (other-window -1)))
 
 ;; 言語・エンコーディング
-(setenv "LANG" "en_US.UTF-8")
 (prefer-coding-system 'utf-8)
 (set-language-environment "Japanese")
 (set-default-coding-systems 'utf-8-unix)
