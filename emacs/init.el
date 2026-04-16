@@ -131,7 +131,9 @@
   (add-to-list 'eglot-server-programs
                '(web-mode . ("vscode-html-language-server" "--stdio")))
   (add-to-list 'eglot-server-programs
-               '(yaml-mode . ("yaml-language-server" "--stdio"))))
+               '(yaml-mode . ("yaml-language-server" "--stdio")))
+  (add-to-list 'eglot-server-programs
+               '((web-mode css-mode) . ("tailwindcss-language-server" "--stdio"))))
 
 ;; Web / YAML
 (use-package web-mode
