@@ -30,6 +30,11 @@ brew bundle
 
 # fish プラグインを再インストール
 fisher update
+
+# Emacs 用言語サーバー
+npm install -g typescript-language-server typescript
+npm install -g vscode-langservers-extracted
+npm install -g yaml-language-server
 ```
 
 `stow .` が `~/.config` 配下に各ファイルのシンボリックリンクを作成します。

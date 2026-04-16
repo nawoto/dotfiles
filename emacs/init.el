@@ -105,6 +105,32 @@
 (use-package olivetti
   :custom (olivetti-body-width 80))
 
+;; Tree-sitter（高精度シンタックスハイライト）
+(use-package treesit-auto
+  :config (global-treesit-auto-mode))
+
+;; LSP
+(use-package eglot
+  :hook
+  (typescript-ts-mode . eglot-ensure)
+  (tsx-ts-mode        . eglot-ensure)
+  (web-mode           . eglot-ensure)
+  (css-mode           . eglot-ensure)
+  (json-ts-mode       . eglot-ensure)
+  (yaml-mode          . eglot-ensure)
+  :config
+  (add-to-list 'eglot-server-programs
+               '(web-mode . ("vscode-html-language-server" "--stdio")))
+  (add-to-list 'eglot-server-programs
+               '(yaml-mode . ("yaml-language-server" "--stdio"))))
+
+;; Web / YAML
+(use-package web-mode
+  :mode ("\\.html?\\'" "\\.erb\\'"))
+
+(use-package yaml-mode
+  :mode "\\.ya?ml\\'")
+
 (use-package dashboard
   :config
   (dashboard-setup-startup-hook)
