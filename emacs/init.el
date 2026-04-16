@@ -159,6 +159,8 @@
 (use-package vterm
   :bind ("C-c v" . vterm)
   :config
+  (define-key vterm-mode-map (kbd "S-<return>")
+    (lambda () (interactive) (vterm-send-key "<return>" t nil nil)))
   (defun my/claude ()
     (interactive)
     (if (get-buffer "*claude*")
