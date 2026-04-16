@@ -81,6 +81,15 @@
 (use-package magit
   :bind ("C-c g" . magit-status))
 
+(use-package diff-hl
+  :config (global-diff-hl-mode 1))
+
+(use-package git-timemachine
+  :bind ("C-c h" . git-timemachine))
+
+(use-package dirvish
+  :init (dirvish-override-dired-mode))
+
 (setq font-lock-maximum-decoration t)
 (mapc (lambda (face)
         (when (facep face)
