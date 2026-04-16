@@ -2,6 +2,7 @@ tap "railwaycat/emacsmacport"
 
 brew "aspell"
 brew "cmake"
+brew "libtool"
 brew "bat"
 brew "eza"
 brew "fish"
