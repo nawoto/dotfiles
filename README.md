@@ -16,22 +16,28 @@
 ## 新マシンでのセットアップ
 
 ```sh
-# 依存ツールのインストール
-brew install fish fisher ghq stow
-
+# 1. stow と ghq を入れて dotfiles を clone
+brew install ghq stow
 ghq get nawoto/dotfiles
 cd ~/ghq/github.com/nawoto/dotfiles
 
-# dotfiles を ~/.config に symlink
+# 2. dotfiles を ~/.config に symlink
 stow .
 
-# Homebrew パッケージ・アプリを一括インストール
+# 3. Homebrew パッケージ・アプリを一括インストール
 brew bundle
 
-# fish プラグインを再インストール
+# 4. fish を default shell に設定
+echo /opt/homebrew/bin/fish | sudo tee -a /etc/shells
+chsh -s /opt/homebrew/bin/fish
+
+# 5. fish プラグインを再インストール
 fisher update
 
-# Emacs 用言語サーバー
+# 6. Node.js をインストール（volta 経由）
+volta install node
+
+# 7. Emacs 用言語サーバー
 npm install -g typescript-language-server typescript
 npm install -g vscode-langservers-extracted
 npm install -g yaml-language-server
