@@ -16,8 +16,8 @@
 ## 新マシンでのセットアップ
 
 ```sh
-# 1. stow と ghq を入れて dotfiles を clone
-brew install ghq stow
+# 1. 最低限必要なツールをインストールして dotfiles を clone
+brew install fish fisher ghq stow volta
 ghq get nawoto/dotfiles
 cd ~/ghq/github.com/nawoto/dotfiles
 
