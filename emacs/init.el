@@ -1,4 +1,4 @@
-;;; init.el --- Emacs 初期設定
+;;; init.el --- Emacs 初期設定  -*- lexical-binding: t -*-
 
 ;; パッケージ管理
 (require 'package)
