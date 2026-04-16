@@ -42,6 +42,7 @@ npm install -g typescript-language-server typescript
 npm install -g vscode-langservers-extracted
 npm install -g yaml-language-server
 npm install -g @tailwindcss/language-server
+npm install -g @astrojs/language-server
 ```
 
 `stow .` が `~/.config` 配下に各ファイルのシンボリックリンクを作成します。

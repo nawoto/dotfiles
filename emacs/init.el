@@ -119,8 +119,12 @@
   :config (global-treesit-auto-mode))
 
 ;; LSP
+(use-package astro-ts-mode
+  :mode "\\.astro\\'")
+
 (use-package eglot
   :hook
+  (astro-ts-mode      . eglot-ensure)
   (typescript-ts-mode . eglot-ensure)
   (tsx-ts-mode        . eglot-ensure)
   (web-mode           . eglot-ensure)
@@ -129,11 +133,13 @@
   (yaml-mode          . eglot-ensure)
   :config
   (add-to-list 'eglot-server-programs
+               '(astro-ts-mode . ("astro-ls" "--stdio")))
+  (add-to-list 'eglot-server-programs
                '(web-mode . ("vscode-html-language-server" "--stdio")))
   (add-to-list 'eglot-server-programs
                '(yaml-mode . ("yaml-language-server" "--stdio")))
   (add-to-list 'eglot-server-programs
-               '((web-mode css-mode) . ("tailwindcss-language-server" "--stdio"))))
+               '((web-mode css-mode astro-ts-mode) . ("tailwindcss-language-server" "--stdio"))))
 
 ;; Web / YAML
 (use-package web-mode
