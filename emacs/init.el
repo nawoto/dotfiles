@@ -175,8 +175,8 @@
 (menu-bar-mode 1)
 (global-hl-line-mode 1)
 
-(set-frame-font "Menlo-22" nil t)
-(add-to-list 'default-frame-alist '(font . "Menlo-22"))
+(set-frame-font "Hack Nerd Font Mono-22" nil t)
+(add-to-list 'default-frame-alist '(font . "Hack Nerd Font Mono-22"))
 
 (load-theme 'modus-vivendi t)
 
