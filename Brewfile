@@ -16,6 +16,7 @@ brew "volta"
 brew "webp"
 brew "railwaycat/emacsmacport/emacs-mac@29", args: ["with-modern-icon"]
 
+cask "font-hack-nerd-font"
 cask "claude-code"
 cask "ghostty"
 cask "keepassxc"
