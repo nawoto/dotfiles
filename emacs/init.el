@@ -85,7 +85,7 @@
   :config (global-diff-hl-mode 1))
 
 (use-package git-timemachine
-  :bind ("C-c h" . git-timemachine))
+  :bind ("C-c t" . git-timemachine))
 
 (use-package dirvish
   :init (dirvish-override-dired-mode))
@@ -156,9 +156,16 @@
                                     "Edit with joy!"))
   (setq dashboard-set-footer t))
 
-(use-package eat
-  :hook (eshell-mode . eat-eshell-mode)
-  :bind ("C-c t" . eat))
+(use-package vterm
+  :bind ("C-c v" . vterm)
+  :config
+  (defun my/claude ()
+    (interactive)
+    (if (get-buffer "*claude*")
+        (switch-to-buffer "*claude*")
+      (vterm "*claude*")
+      (vterm-send-string "claude\n")))
+  (global-set-key (kbd "C-c C") #'my/claude))
 
 ;; 見た目
 (tool-bar-mode -1)
