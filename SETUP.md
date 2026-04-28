@@ -29,8 +29,11 @@ stow .
 brew install --cask keepingyouawake
 ```
 
-AquaSKK は Homebrew 未対応のため、公式サイトからインストール:
-https://github.com/codefirst/aquaskk/releases
+AquaSKK は Homebrew 未対応のため手動でインストール:
+
+1. https://github.com/codefirst/aquaskk/releases から最新の `.pkg` をダウンロード
+2. `.pkg` を実行してインストール
+3. システム設定 → キーボード → 入力ソース → AquaSKK を追加
 
 ## 5. Ghostty + Claude Code をセットアップ
 
