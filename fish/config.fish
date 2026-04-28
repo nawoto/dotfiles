@@ -14,6 +14,7 @@ alias ll 'eza --icons --git --time-style relative -al'
 
 if status is-interactive
     starship init fish | source
+    fzf_configure_bindings --directory=\cf
 
     # ↑↓キーで履歴検索
     bind up history-search-backward
