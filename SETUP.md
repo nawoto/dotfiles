@@ -54,16 +54,7 @@ cd ~/Development/github.com/nawoto/dotfiles
 brew bundle
 ```
 
-## 7. fish をデフォルトシェルに設定
-
-```sh
-echo /opt/homebrew/bin/fish | sudo tee -a /etc/shells
-chsh -s /opt/homebrew/bin/fish
-```
-
-fish を再起動してから続ける。
-
-## 8. fish プラグインをインストール
+## 7. fish プラグインをインストール
 
 ```sh
 fisher update

@@ -1,2 +1,3 @@
 font-family = Hack Nerd Font Mono
 font-size = 18
+shell = /opt/homebrew/bin/fish
