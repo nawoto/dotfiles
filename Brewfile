@@ -17,8 +17,10 @@ brew "webp"
 brew "railwaycat/emacsmacport/emacs-mac@29", args: ["with-modern-icon"]
 
 cask "font-hack-nerd-font"
+cask "aqua-skk"
 cask "claude-code"
 cask "ghostty"
 cask "keepassxc"
+cask "keepingyouawake"
 cask "obsidian"
 cask "raycast"
