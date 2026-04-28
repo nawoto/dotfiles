@@ -26,8 +26,11 @@ stow .
 ## 4. まず入れておくアプリ
 
 ```sh
-brew install --cask aqua-skk keepingyouawake
+brew install --cask keepingyouawake
 ```
+
+AquaSKK は Homebrew 未対応のため、公式サイトからインストール:
+https://github.com/codefirst/aquaskk/releases
 
 ## 5. Ghostty + Claude Code をセットアップ
 
