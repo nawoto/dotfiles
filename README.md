@@ -17,7 +17,7 @@
 
 ```sh
 # 1. 最低限必要なツールをインストールして dotfiles を clone
-brew install fish fisher ghq stow volta
+brew install fish fisher ghq stow mise
 ghq get nawoto/dotfiles
 cd ~/ghq/github.com/nawoto/dotfiles
 
@@ -34,8 +34,8 @@ chsh -s /opt/homebrew/bin/fish
 # 5. fish プラグインを再インストール
 fisher update
 
-# 6. Node.js をインストール（volta 経由）
-volta install node
+# 6. Node.js をインストール（mise 経由）
+mise install node@lts
 
 # 7. Emacs 用言語サーバー
 npm install -g typescript-language-server typescript

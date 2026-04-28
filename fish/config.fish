@@ -1,8 +1,7 @@
 fish_add_path /opt/homebrew/bin
 fish_add_path $HOME/.local/bin
 
-set -gx VOLTA_HOME "$HOME/.volta"
-fish_add_path "$VOLTA_HOME/bin"
+mise activate fish | source
 
 set -x FZF_DEFAULT_COMMAND 'rg --files --hidden --follow --glob "!.git/*"'
 set -x FZF_FIND_FILE_COMMAND $FZF_DEFAULT_COMMAND

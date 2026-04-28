@@ -12,7 +12,7 @@ brew "gh"
 brew "ghq"
 brew "ripgrep"
 brew "starship"
-brew "volta"
+brew "mise"
 brew "webp"
 brew "railwaycat/emacsmacport/emacs-mac@29", args: ["with-modern-icon"]
 
