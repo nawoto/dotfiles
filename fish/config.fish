@@ -3,7 +3,7 @@ fish_add_path $HOME/.local/bin
 
 mise activate fish | source
 
-set -x FZF_DEFAULT_COMMAND 'rg --files --hidden --follow --glob "!.git/*"'
+set -gx FZF_DEFAULT_COMMAND 'rg --files --hidden --follow --glob "!.git/*"'
 
 zoxide init fish | source
 
@@ -16,6 +16,6 @@ if status is-interactive
     starship init fish | source
 
     # ↑↓キーで履歴検索
-    bind \e\[A history-search-backward
-    bind \e\[B history-search-forward
+    bind up history-search-backward
+    bind down history-search-forward
 end
