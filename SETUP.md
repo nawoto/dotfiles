@@ -50,6 +50,7 @@ claude
 ## 6. 残りの Homebrew パッケージ・アプリを一括インストール
 
 ```sh
+cd ~/Development/github.com/nawoto/dotfiles
 brew bundle
 ```
 
