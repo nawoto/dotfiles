@@ -51,6 +51,7 @@
       `((".*" ,(expand-file-name "auto-saves/" user-emacs-directory) t)))
 
 (setq-default truncate-lines t)
+(global-auto-revert-mode 1)
 (show-paren-mode 1)
 (setq show-paren-delay 0)
 (delete-selection-mode 1)
