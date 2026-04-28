@@ -104,16 +104,16 @@ npm install -g @tailwindcss/language-server
 npm install -g @astrojs/language-server
 ```
 
+---
+
+## フェーズ4: 手動で完了させること
+
 ### 11. git の設定
 
 ```sh
 git config --global user.name "Your Name"
 git config --global user.email "your@email.com"
 ```
-
----
-
-## フェーズ4: 手動で完了させること
 
 ### 12. Emacs の初回起動
 
