@@ -33,6 +33,9 @@
 
 (setq display-line-numbers-type 'relative)
 (global-display-line-numbers-mode 1)
+(dolist (mode '(vterm-mode-hook
+                dashboard-mode-hook))
+  (add-hook mode (lambda () (display-line-numbers-mode -1))))
 
 (setq tab-width 4)
 (setq-default indent-tabs-mode nil)
@@ -82,7 +85,9 @@
   :bind ("C-c g" . magit-status))
 
 (use-package diff-hl
-  :config (global-diff-hl-mode 1))
+  :config
+  (global-diff-hl-mode 1)
+  (add-hook 'magit-post-refresh-hook #'diff-hl-magit-post-refresh))
 
 (use-package git-timemachine
   :bind ("C-c t" . git-timemachine))
@@ -131,13 +136,14 @@
   (css-mode           . eglot-ensure)
   (json-ts-mode       . eglot-ensure)
   (yaml-mode          . eglot-ensure)
+  (yaml-ts-mode       . eglot-ensure)
   :config
   (add-to-list 'eglot-server-programs
                '(astro-ts-mode . ("astro-ls" "--stdio")))
   (add-to-list 'eglot-server-programs
                '(web-mode . ("vscode-html-language-server" "--stdio")))
   (add-to-list 'eglot-server-programs
-               '(yaml-mode . ("yaml-language-server" "--stdio")))
+               '((yaml-mode yaml-ts-mode) . ("yaml-language-server" "--stdio")))
   (add-to-list 'eglot-server-programs
                '((web-mode css-mode astro-ts-mode) . ("tailwindcss-language-server" "--stdio"))))
 
