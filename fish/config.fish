@@ -4,7 +4,8 @@ fish_add_path $HOME/.local/bin
 mise activate fish | source
 
 set -x FZF_DEFAULT_COMMAND 'rg --files --hidden --follow --glob "!.git/*"'
-set -x FZF_FIND_FILE_COMMAND $FZF_DEFAULT_COMMAND
+
+zoxide init fish | source
 
 alias ls 'eza -l --git'
 alias l  'eza -l --git'
