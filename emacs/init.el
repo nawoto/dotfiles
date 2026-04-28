@@ -47,6 +47,8 @@
 (setq auto-save-default t)
 (setq auto-save-interval 60)
 (setq auto-save-timeout 30)
+(setq auto-save-file-name-transforms
+      `((".*" ,(expand-file-name "auto-saves/" user-emacs-directory) t)))
 
 (setq-default truncate-lines t)
 (show-paren-mode 1)
