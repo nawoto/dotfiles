@@ -34,8 +34,8 @@ chsh -s /opt/homebrew/bin/fish
 # 5. fish プラグインを再インストール
 fisher update
 
-# 6. Node.js をインストール（mise 経由）
-mise install node@lts
+# 6. ランタイムをインストール（mise 経由）
+mise install
 
 # 7. Emacs 用言語サーバー
 npm install -g typescript-language-server typescript
