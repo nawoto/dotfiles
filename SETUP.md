@@ -19,7 +19,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 brew install fish fisher ghq stow mise
 gh auth login
 ghq get nawoto/dotfiles
-cd ~/ghq/github.com/nawoto/dotfiles
+cd ~/Development/github.com/nawoto/dotfiles
 stow .
 ```
 
