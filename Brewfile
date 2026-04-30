@@ -15,6 +15,7 @@ brew "ghq"
 brew "ripgrep"
 brew "starship"
 brew "mise"
+brew "stow"
 brew "webp"
 brew "railwaycat/emacsmacport/emacs-mac@29", args: ["with-modern-icon"]
 
