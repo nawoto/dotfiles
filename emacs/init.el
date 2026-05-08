@@ -124,7 +124,8 @@
 
 (use-package emojify
   :hook (text-mode . emojify-mode)
-  :bind ("C-c e" . emojify-insert-emoji))
+  :bind ("C-c e" . emojify-insert-emoji)
+  :custom (emojify-display-style 'unicode))
 
 ;; Tree-sitter（高精度シンタックスハイライト）
 (use-package treesit-auto
@@ -192,6 +193,7 @@
 
 (set-frame-font "Hack Nerd Font Mono-22" nil t)
 (add-to-list 'default-frame-alist '(font . "Hack Nerd Font Mono-22"))
+(set-fontset-font t 'emoji "Apple Color Emoji")
 
 (load-theme 'modus-vivendi t)
 
