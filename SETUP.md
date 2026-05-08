@@ -103,7 +103,6 @@ npm install -g typescript-language-server typescript
 npm install -g vscode-langservers-extracted
 npm install -g yaml-language-server
 npm install -g @tailwindcss/language-server
-npm install -g @astrojs/language-server
 ```
 
 ---

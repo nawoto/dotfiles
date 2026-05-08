@@ -48,7 +48,7 @@
 (setq auto-save-interval 60)
 (setq auto-save-timeout 30)
 (setq auto-save-file-name-transforms
-      `((".*" ,(expand-file-name "auto-saves/" user-emacs-directory) t)))
+      `((".*" ,(expand-file-name "auto-save-list/" user-emacs-directory) t)))
 
 (setq-default truncate-lines t)
 (global-auto-revert-mode 1)
@@ -122,17 +122,17 @@
 (use-package olivetti
   :custom (olivetti-body-width 80))
 
+(use-package emojify
+  :hook (text-mode . emojify-mode)
+  :bind ("C-c e" . emojify-insert-emoji))
+
 ;; Tree-sitter（高精度シンタックスハイライト）
 (use-package treesit-auto
   :config (global-treesit-auto-mode))
 
 ;; LSP
-(use-package astro-ts-mode
-  :mode "\\.astro\\'")
-
 (use-package eglot
   :hook
-  (astro-ts-mode      . eglot-ensure)
   (typescript-ts-mode . eglot-ensure)
   (tsx-ts-mode        . eglot-ensure)
   (web-mode           . eglot-ensure)
@@ -142,13 +142,11 @@
   (yaml-ts-mode       . eglot-ensure)
   :config
   (add-to-list 'eglot-server-programs
-               '(astro-ts-mode . ("astro-ls" "--stdio")))
-  (add-to-list 'eglot-server-programs
                '(web-mode . ("vscode-html-language-server" "--stdio")))
   (add-to-list 'eglot-server-programs
                '((yaml-mode yaml-ts-mode) . ("yaml-language-server" "--stdio")))
   (add-to-list 'eglot-server-programs
-               '((web-mode css-mode astro-ts-mode) . ("tailwindcss-language-server" "--stdio"))))
+               '((web-mode css-mode) . ("tailwindcss-language-server" "--stdio"))))
 
 ;; Web / YAML
 (use-package web-mode
