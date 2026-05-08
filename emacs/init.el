@@ -126,7 +126,7 @@
 
 (use-package grip-mode
   :bind (:map markdown-mode-map
-              ("C-c g" . grip-mode)))
+              ("C-c P" . grip-mode)))
 
 (use-package osx-dictionary
   :bind ("C-c d" . osx-dictionary-search-word-at-point))
