@@ -124,6 +124,13 @@
 (use-package olivetti
   :custom (olivetti-body-width 80))
 
+(use-package grip-mode
+  :bind (:map markdown-mode-command-map
+              ("g" . grip-mode)))
+
+(use-package osx-dictionary
+  :bind ("C-c d" . osx-dictionary-search-word-at-point))
+
 (use-package emojify
   :hook (text-mode . emojify-mode)
   :bind ("C-c e" . emojify-insert-emoji)
