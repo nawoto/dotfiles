@@ -125,8 +125,8 @@
   :custom (olivetti-body-width 80))
 
 (use-package grip-mode
-  :bind (:map markdown-mode-command-map
-              ("p" . grip-mode)))
+  :bind (:map markdown-mode-map
+              ("C-c C-c p" . grip-mode)))
 
 (use-package osx-dictionary
   :bind ("C-c d" . osx-dictionary-search-word-at-point))
