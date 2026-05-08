@@ -108,14 +108,22 @@ npm install -g @astrojs/language-server
 
 ## フェーズ4: 手動で完了させること
 
-### 11. git の設定
+### 11. Dropbox のセットアップ
+
+Dropbox を起動してサインインし、同期フォルダを設定する。
+
+### 12. Google Chrome のセットアップ
+
+Google Chrome を起動して Google アカウントでサインインし、ブックマーク等を同期する。
+
+### 13. git の設定
 
 ```sh
 git config --global user.name "Your Name"
 git config --global user.email "your@email.com"
 ```
 
-### 12. Emacs の初回起動
+### 14. Emacs の初回起動
 
 Emacs を起動するとパッケージが自動インストールされる。完了後:
 
