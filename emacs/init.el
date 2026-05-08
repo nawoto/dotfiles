@@ -79,7 +79,9 @@
   ("C-s"     . consult-line)
   ("M-y"     . consult-yank-pop)
   ("C-c r"   . consult-ripgrep)
-  ("C-x p b" . consult-project-buffer))
+  ("C-c p b" . consult-project-buffer))
+
+(define-key global-map (kbd "C-c p") project-prefix-map)
 
 (use-package which-key
   :config (which-key-mode 1))
@@ -200,7 +202,7 @@
 ;; キーバインド
 (global-set-key (kbd "C-h") 'delete-backward-char) ; ヘルプは F1
 (global-set-key (kbd "C-z") #'undo)
-(global-set-key (kbd "C-x O") (lambda () (interactive) (other-window -1)))
+(global-set-key (kbd "C-x p") (lambda () (interactive) (other-window -1)))
 
 ;; 言語・エンコーディング
 (prefer-coding-system 'utf-8)
