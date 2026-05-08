@@ -29,12 +29,14 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 ### 4. 最低限のツールと dotfiles
 
 ```sh
-brew install fish fisher ghq stow mise
+brew install fish fisher gh ghq stow mise
 gh auth login
 ghq get nawoto/dotfiles
 cd ~/Development/github.com/nawoto/dotfiles
 stow .
 ```
+
+`ghq root` は dotfiles の `git/config` に `~/Development` として設定されているため、`stow .` 後は `~/Development` 配下に clone される。
 
 ### 5. まず入れておくアプリ
 
@@ -108,22 +110,26 @@ npm install -g @astrojs/language-server
 
 ## フェーズ4: 手動で完了させること
 
-### 11. Dropbox のセットアップ
+### 11. Slack のセットアップ
+
+Slack を起動してサインインする。
+
+### 12. Dropbox のセットアップ
 
 Dropbox を起動してサインインし、同期フォルダを設定する。
 
-### 12. Google Chrome のセットアップ
+### 13. Google Chrome のセットアップ
 
 Google Chrome を起動して Google アカウントでサインインし、ブックマーク等を同期する。
 
-### 13. git の設定
+### 14. git の設定
 
 ```sh
 git config --global user.name "Your Name"
 git config --global user.email "your@email.com"
 ```
 
-### 14. Emacs の初回起動
+### 15. Emacs の初回起動
 
 Emacs を起動するとパッケージが自動インストールされる。完了後:
 
