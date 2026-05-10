@@ -1,16 +1,29 @@
 # 新マシンのセットアップ手順
 
-## フェーズ1: 手動でやること
-
-以下は対話操作が必要なため、手動で実施する。
-
-### 1. Xcode Command Line Tools
+## 1. Xcode Command Line Tools
 
 ```sh
 xcode-select --install
 ```
 
-### 2. SSH キーの生成と GitHub への登録
+## 2. Homebrew
+
+```sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
+```
+
+## 3. dotfiles を clone して環境を構築
+
+```sh
+mkdir -p ~/Development/github.com/nawoto
+git clone https://github.com/nawoto/dotfiles ~/Development/github.com/nawoto/dotfiles
+cd ~/Development/github.com/nawoto/dotfiles
+brew bundle
+stow .
+```
+
+## 4. SSH キーの生成と GitHub への登録
 
 ```sh
 ssh-keygen -t ed25519 -C "your@email.com"
@@ -19,84 +32,25 @@ cat ~/.ssh/id_ed25519.pub
 
 公開鍵を GitHub に登録: https://github.com/settings/ssh/new
 
-### 3. Homebrew
+## 5. GitHub CLI の認証
 
 ```sh
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-eval "$(/opt/homebrew/bin/brew shellenv)"
-```
-
-### 4. 最低限のツールと dotfiles
-
-```sh
-brew install fish fisher gh ghq stow mise
 gh auth login
-ghq get nawoto/dotfiles
-cd ~/Development/github.com/nawoto/dotfiles
-stow .
 ```
 
-`ghq root` は dotfiles の `git/config` に `~/Development` として設定されているため、`stow .` 後は `~/Development` 配下に clone される。
-
-### 5. まず入れておくアプリ
-
-```sh
-brew install --cask keepingyouawake
-```
-
-AquaSKK は Homebrew 未対応のため手動でインストール:
-
-1. https://github.com/codefirst/aquaskk/releases から最新の `.pkg` をダウンロード
-2. `.pkg` を実行してインストール
-3. システム設定 → キーボード → 入力ソース → AquaSKK を追加
-
-### 6. Ghostty + Claude Code をセットアップ
-
-```sh
-brew install --cask ghostty claude-code font-hack-nerd-font
-```
-
-Ghostty を起動して動作確認し、Claude Code を実行する。
-
-```sh
-claude
-```
-
----
-
-## フェーズ2: Claude Code に任せる
-
-Ghostty で Claude Code を起動し、以下を伝える:
-
-```
-~/Development/github.com/nawoto/dotfiles/SETUP.md の
-フェーズ3の手順を実行してください。
-```
-
----
-
-## フェーズ3: Claude Code が自動実行する手順
-
-### 7. 残りの Homebrew パッケージ・アプリを一括インストール
-
-```sh
-cd ~/Development/github.com/nawoto/dotfiles
-brew bundle
-```
-
-### 8. fish プラグインをインストール
+## 6. fish プラグインをインストール
 
 ```sh
 fisher update
 ```
 
-### 9. ランタイムをインストール
+## 7. ランタイムをインストール
 
 ```sh
 mise install
 ```
 
-### 10. Emacs 用言語サーバー
+## 8. Emacs 用言語サーバー
 
 ```sh
 npm install -g typescript-language-server typescript
@@ -105,30 +59,28 @@ npm install -g yaml-language-server
 npm install -g @tailwindcss/language-server
 ```
 
----
+## 9. AquaSKK のインストール
 
-## フェーズ4: 手動で完了させること
+AquaSKK は Homebrew 未対応のため手動でインストール:
 
-### 11. Slack のセットアップ
+1. https://github.com/codefirst/aquaskk/releases から最新の `.pkg` をダウンロード
+2. `.pkg` を実行してインストール
+3. システム設定 → キーボード → 入力ソース → AquaSKK を追加
 
-Slack を起動してサインインする。
-
-### 12. Dropbox のセットアップ
-
-Dropbox を起動してサインインし、同期フォルダを設定する。
-
-### 13. Google Chrome のセットアップ
-
-Google Chrome を起動して Google アカウントでサインインし、ブックマーク等を同期する。
-
-### 14. git の設定
+## 10. git の設定
 
 ```sh
 git config --global user.name "Your Name"
 git config --global user.email "your@email.com"
 ```
 
-### 15. Emacs の初回起動
+## 11. 各アプリのサインイン
+
+- **Slack**: 起動してサインイン
+- **Dropbox**: 起動してサインインし、同期フォルダを設定
+- **Google Chrome**: 起動して Google アカウントでサインインし、ブックマーク等を同期
+
+## 12. Emacs の初回起動
 
 Emacs を起動するとパッケージが自動インストールされる。完了後:
 
