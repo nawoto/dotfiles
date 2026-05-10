@@ -64,7 +64,11 @@ npm install -g yaml-language-server
 npm install -g @tailwindcss/language-server
 ```
 
-## 9. AquaSKK のインストール
+## 9. Caps Lock と Control の入れ替え
+
+システム設定 → キーボード → キーボードショートカット → 修飾キー → Caps Lock を Control に変更
+
+## 11. AquaSKK のインストール
 
 AquaSKK は Homebrew 未対応のため手動でインストール:
 
@@ -72,20 +76,20 @@ AquaSKK は Homebrew 未対応のため手動でインストール:
 2. `.pkg` を実行してインストール
 3. システム設定 → キーボード → 入力ソース → AquaSKK を追加
 
-## 10. git の設定
+## 12. git の設定
 
 ```sh
 git config --global user.name "Your Name"
 git config --global user.email "your@email.com"
 ```
 
-## 11. 各アプリのサインイン
+## 13. 各アプリのサインイン
 
 - **Slack**: 起動してサインイン
 - **Dropbox**: 起動してサインインし、同期フォルダを設定
 - **Google Chrome**: 起動して Google アカウントでサインインし、ブックマーク等を同期
 
-## 12. Emacs の初回起動
+## 14. Emacs の初回起動
 
 Emacs を起動するとパッケージが自動インストールされる。完了後:
 
