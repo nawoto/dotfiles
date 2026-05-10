@@ -23,6 +23,8 @@ brew bundle
 stow .
 ```
 
+`stow .` は `~/.config` 配下に既存ファイルがあると競合してエラーになる。その場合は該当ファイルを削除してから再実行する。
+
 ## 4. SSH キーの生成と GitHub への登録
 
 ```sh
@@ -39,6 +41,8 @@ gh auth login
 ```
 
 ## 6. fish プラグインをインストール
+
+Ghostty を起動すると fish が立ち上がる。その状態で:
 
 ```sh
 fisher update
