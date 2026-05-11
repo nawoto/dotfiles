@@ -68,7 +68,7 @@ npm install -g @tailwindcss/language-server
 
 システム設定 → キーボード → キーボードショートカット → 修飾キー → Caps Lock を Control に変更
 
-## 11. AquaSKK のインストール
+## 10. AquaSKK のインストール
 
 AquaSKK は Homebrew 未対応のため手動でインストール:
 
