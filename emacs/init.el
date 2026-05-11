@@ -98,7 +98,8 @@
   :bind ("C-c t" . git-timemachine))
 
 (use-package dirvish
-  :init (dirvish-override-dired-mode))
+  :init (dirvish-override-dired-mode)
+  :custom (dired-use-ls-dired nil))
 
 (setq font-lock-maximum-decoration t)
 (mapc (lambda (face)
@@ -215,6 +216,8 @@
 (prefer-coding-system 'utf-8)
 (set-language-environment "Japanese")
 (set-default-coding-systems 'utf-8-unix)
+
+(server-start)
 
 ;;; init.el ends here
 (custom-set-variables
