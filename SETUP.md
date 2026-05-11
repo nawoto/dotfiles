@@ -35,6 +35,16 @@ cat ~/.ssh/id_ed25519.pub
 
 公開鍵を GitHub に登録: https://github.com/settings/ssh/new
 
+macOS キーチェーンと連携するため `~/.ssh/config` を作成する:
+
+```sh
+cat << 'EOF' >> ~/.ssh/config
+Host *
+  UseKeychain yes
+  AddKeysToAgent yes
+EOF
+```
+
 ## 5. GitHub CLI の認証
 
 ```sh
