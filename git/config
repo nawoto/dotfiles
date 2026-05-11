@@ -1,2 +1,5 @@
 [ghq]
 	root = ~/Development
+[user]
+	name = Naoto Nishimura
+	email = nishimura@nawo.to
