@@ -99,7 +99,13 @@ git config --global user.email "your@email.com"
 - **Dropbox**: 起動してサインインし、同期フォルダを設定
 - **Google Chrome**: 起動して Google アカウントでサインインし、ブックマーク等を同期
 
-## 14. Emacs の初回起動
+## 14. Emacs.app を Applications に追加
+
+```sh
+ln -s /opt/homebrew/opt/emacs-mac@29/Emacs.app /Applications/Emacs.app
+```
+
+## 15. Emacs の初回起動
 
 Emacs を起動するとパッケージが自動インストールされる。完了後:
 
