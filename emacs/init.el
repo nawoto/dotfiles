@@ -42,7 +42,7 @@
 
 (setq backup-by-copying t)
 (setq make-backup-files t)
-(setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
+(setq backup-directory-alist `(("." . ,(expand-file-name "backups" user-emacs-directory))))
 
 (setq auto-save-default t)
 (setq auto-save-interval 60)
@@ -132,10 +132,7 @@
 (use-package osx-dictionary
   :bind ("C-c d" . osx-dictionary-search-word-at-point))
 
-(use-package emojify
-  :hook (text-mode . emojify-mode)
-  :bind ("C-c e" . emojify-insert-emoji)
-  :custom (emojify-display-style 'unicode))
+(global-set-key (kbd "C-c e") #'emoji-insert)
 
 ;; Tree-sitter（高精度シンタックスハイライト）
 (use-package treesit-auto
@@ -226,7 +223,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(vterm dashboard yaml-mode web-mode treesit-auto emojify osx-dictionary grip-mode olivetti markdown-mode dirvish git-timemachine diff-hl magit which-key consult marginalia orderless vertico)))
+   '(vterm dashboard yaml-mode web-mode treesit-auto osx-dictionary grip-mode olivetti markdown-mode dirvish git-timemachine diff-hl magit which-key consult marginalia orderless vertico)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
