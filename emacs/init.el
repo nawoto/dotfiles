@@ -132,7 +132,12 @@
 (use-package osx-dictionary
   :bind ("C-c d" . osx-dictionary-search-word-at-point))
 
-(global-set-key (kbd "C-c e") #'emoji-insert)
+(defun my/emoji-insert-macos ()
+  (interactive)
+  (shell-command
+   "osascript -e 'tell application \"System Events\" to keystroke space using {control down, command down}'"))
+
+(global-set-key (kbd "C-c e") #'my/emoji-insert-macos)
 
 ;; Tree-sitter（高精度シンタックスハイライト）
 (use-package treesit-auto
